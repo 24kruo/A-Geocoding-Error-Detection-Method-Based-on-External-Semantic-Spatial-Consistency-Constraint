@@ -87,7 +87,7 @@ def calculate_similarity1(city1, district1, road1, building1, city2, district2, 
 data = load_excel_file() # 表一
 data2 = load_excel_file()  # 表二
 
-address = data["地址2"]
+address = data["地址名称"]
 roads = data[["道路1", "道路2", "道路3"]]
 start_lon = data["WGS84经度"]
 start_lat = data["WGS84纬度"]
@@ -158,7 +158,7 @@ for i in range(len(data)):
             if road in road1:
                 sim = 1
             else:
-                # 计算相似度（使用你已实现的calculate_similarity函数）
+                # 计算相似度（使用已实现的calculate_similarity函数）
                 sim = calculate_similarity(road1, road)
             road_sims.append((idx, road, sim))
 
